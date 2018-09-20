@@ -51,6 +51,25 @@ public class WebController {
 		return "Howdy - Bryan Lee";
 
 	}
+	
+	// Min-Jae Yi
+	@RequestMapping(value = "/cs480/minjae-api", method = RequestMethod.POST)
+	String doMath(
+			@RequestParam("value_a") String valA,
+			@RequestParam("value_b") String valB) {
+		int a, b;
+		try {
+			a = Integer.parseInt(valA);
+			b = Integer.parseInt(valB);
+		}
+		catch (NumberFormatException e) {
+			return "Cannot add values due to bad input.\n";
+		}
+		
+		int c = a + b;
+		
+		return Integer.toString(c) + "\n";
+	}
 
 	// Arno Aghababyan
     @RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
