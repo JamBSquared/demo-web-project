@@ -44,7 +44,7 @@ public class WebController {
 
 	// Bryan Lee
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	String testCheck(){
+	String testCheckA(){
 		updateUser("123", "Bryan Lee", "Computer Science");
 		getUser("123");
 		getUserHomepage();
@@ -52,25 +52,6 @@ public class WebController {
 
 	}
 	
-	// Min-Jae Yi
-	@RequestMapping(value = "/cs480/minjae-api", method = RequestMethod.POST)
-	String doMath(
-			@RequestParam("value_a") String valA,
-			@RequestParam("value_b") String valB) {
-		int a, b;
-		try {
-			a = Integer.parseInt(valA);
-			b = Integer.parseInt(valB);
-		}
-		catch (NumberFormatException e) {
-			return "Cannot add values due to bad input.\n";
-		}
-		
-		int c = a + b;
-		
-		return Integer.toString(c) + "\n";
-	}
-
 	// Arno Aghababyan
     @RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
     String checkUser(){
@@ -79,7 +60,26 @@ public class WebController {
 	    getUserHomepage();
 	    return "Successful Retrieved Homepage";
 	}
-
+    
+    // Min-Jae Yi
+ 	@RequestMapping(value = "/cs480/minjae-api", method = RequestMethod.POST)
+ 	String doMath(
+ 			@RequestParam("value_a") String valA,
+ 			@RequestParam("value_b") String valB) {
+ 		int a, b;
+ 		try {
+ 			a = Integer.parseInt(valA);
+ 			b = Integer.parseInt(valB);
+ 		}
+ 		catch (NumberFormatException e) {
+ 			return "Cannot add values due to bad input.\n";
+ 		}
+ 		
+ 		int c = a + b;
+ 		
+ 		return Integer.toString(c) + "\n";
+ 	}
+ 	
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
