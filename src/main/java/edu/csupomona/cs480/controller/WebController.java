@@ -49,17 +49,17 @@ public class WebController {
 		getUser("123");
 		getUserHomepage();
 		return "Howdy - Bryan Lee";
-		
+
 	}
 
 	// Arno Aghababyan
     @RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
-    String testCheck(){
-        updateUser("548", "Arno Aghababyan", "Computer Science");
-        getUser("548");
-        getUserHomepage();
-        return "Successful Retrieved";
-    }
+    String checkUser(){
+	    updateUser("548", "John Smith", "Biology");
+	    getUser("548");
+	    getUserHomepage();
+	    return "Successful Retrieved Homepage";
+	}
 
 	/**
 	 * This is a simple example of how the HTTP API works.
