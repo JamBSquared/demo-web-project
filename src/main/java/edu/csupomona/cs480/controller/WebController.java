@@ -89,6 +89,13 @@ public class WebController {
 		return Integer.toString(c) + "\n";
 	}
 	
+	//Jack Yan
+		@RequestMapping(value = "/cs480/jack", method = RequestMethod.GET)
+	String userCheck() 
+		return "This is a string";
+	}
+
+	
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
