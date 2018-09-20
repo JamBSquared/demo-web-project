@@ -60,8 +60,17 @@ public class WebController {
 	    getUserHomepage();
 	    return "Successful Retrieved Homepage";
 	}
-    
-    // Min-Jae Yi
+
+	// Brian Cho
+	@RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
+	String checkUser() {
+		updateUser("404", "Brian kernighan", "Computer Science");
+		getUser("404");
+		getUserHomepage();
+		return "Hello, World";
+	}
+
+		// Min-Jae Yi
  	@RequestMapping(value = "/cs480/minjae-api", method = RequestMethod.POST)
  	String doMath(
  			@RequestParam("value_a") String valA,
