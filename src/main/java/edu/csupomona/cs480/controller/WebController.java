@@ -91,7 +91,7 @@ public class WebController {
 	
 	//Jack Yan
 		@RequestMapping(value = "/cs480/jack", method = RequestMethod.GET)
-	String userCheck() 
+	String userCheck() {
 		return "This is a string";
 	}
 
