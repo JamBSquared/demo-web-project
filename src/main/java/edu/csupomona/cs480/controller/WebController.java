@@ -53,42 +53,42 @@ public class WebController {
 	}
 	
 	// Arno Aghababyan
-    @RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
-    String checkUser(){
-	    updateUser("548", "John Smith", "Biology");
-	    getUser("548");
-	    getUserHomepage();
-	    return "Successful Retrieved Homepage";
+	@RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
+	String checkUserB(){
+		updateUser("548", "John Smith", "Biology");
+		getUser("548");
+		getUserHomepage();
+		return "Successful Retrieved Homepage";
 	}
 
 	// Brian Cho
-	@RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
-	String checkUser() {
+	@RequestMapping(value = "/cs480/student/cho", method = RequestMethod.GET)
+	String checkUserC() {
 		updateUser("404", "Brian kernighan", "Computer Science");
 		getUser("404");
 		getUserHomepage();
 		return "Hello, World";
 	}
 
-		// Min-Jae Yi
- 	@RequestMapping(value = "/cs480/minjae-api", method = RequestMethod.POST)
- 	String doMath(
- 			@RequestParam("value_a") String valA,
- 			@RequestParam("value_b") String valB) {
- 		int a, b;
- 		try {
- 			a = Integer.parseInt(valA);
- 			b = Integer.parseInt(valB);
- 		}
- 		catch (NumberFormatException e) {
- 			return "Cannot add values due to bad input.\n";
- 		}
- 		
- 		int c = a + b;
- 		
- 		return Integer.toString(c) + "\n";
- 	}
- 	
+	// Min-Jae Yi
+	@RequestMapping(value = "/cs480/minjae-api", method = RequestMethod.POST)
+	String doMath(
+			@RequestParam("value_a") String valA,
+			@RequestParam("value_b") String valB) {
+		int a, b;
+		try {
+			a = Integer.parseInt(valA);
+			b = Integer.parseInt(valB);
+		}
+		catch (NumberFormatException e) {
+			return "Cannot add values due to bad input.\n";
+		}
+		
+		int c = a + b;
+		
+		return Integer.toString(c) + "\n";
+	}
+	
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
