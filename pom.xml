@@ -62,6 +62,7 @@
 		    <version>1.8.1</version>
 		</dependency>
 
+		<!--Added Guava by Brian Cho-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
