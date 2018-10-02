@@ -1,7 +1,9 @@
 package edu.csupomona.cs480.controller;
 
+import java.io.File;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,6 +65,17 @@ public class WebController {
 		return "Howdy - Bryan Lee";
 
 	}
+	private static final String PARENT_DIR = "C:\\Users\\BryanLee\\ProgramFile";
+
+	public void checkFileExistsInDirectoryExists() {
+		File randomFile = FileUtils.getFile("C:\\Users\\BryanLee\\ProgramFile\\text.txt");
+		File parent = FileUtils.getFile(PARENT_DIR);
+		try {
+			System.out.println("Does it exist: " + FileUtils.directoryContains(parent, randomFile));
+
+		} catch (IOException io) {
+		}
+	}
 	
 	// Arno Aghababyan
 	@RequestMapping(value = "/cs480/student/", method = RequestMethod.GET)
@@ -74,7 +87,7 @@ public class WebController {
 	}
 
 	@RequestMapping(value = "/cs480/dom4j/", method = RequestMethod.GET)
-	String createDocument(){
+	Document createDocument(){
 		Document document = DocumentHelper.createDocument();
 		Element root = document.addElement("root");
 
