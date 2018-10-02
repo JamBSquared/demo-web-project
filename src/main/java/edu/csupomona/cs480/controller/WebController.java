@@ -22,6 +22,12 @@ import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
+package com.mkyong;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import java.io.IOException;
+
 
 /**
  * This is the controller used by Spring framework.
@@ -119,6 +125,26 @@ public class WebController {
 	String userCheck() {
 		return "This is a string";
 	}
+	
+		// Using jsoup package to grab title from a website
+		print("Running...");
+		Document document;
+		try {
+			//Get Document object after parsing the html from given url.
+			document = Jsoup.connect("http://youtube.com/").get();
+
+			String title = document.title(); //Get title
+			print("  Title: " + title); //Print title.
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		print("Done");
+
+	public static void print(String string) {
+		System.out.println(string);
+	}
+
 
 	
 	/**
