@@ -18,6 +18,10 @@ import edu.csupomona.cs480.data.provider.UserManager;
 
 import org.apache.commons.math3.random.RandomDataGenerator;
 
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
+
 
 /**
  * This is the controller used by Spring framework.
@@ -61,6 +65,19 @@ public class WebController {
 		getUser("548");
 		getUserHomepage();
 		return "Successful Retrieved Homepage";
+	}
+
+	@RequestMapping(value = "/cs480/dom4j/", method = RequestMethod.GET)
+	String createDocument(){
+		Document document = DocumentHelper.createDocument();
+		Element root = document.addElement("root");
+
+		Element author1 = root.addElement("author")
+				.addAttribute("name", "Bob")
+				.addAttribute("location", "USA")
+				.addText("Bob Bill");
+
+		return document;
 	}
 
 	// Brian Cho
