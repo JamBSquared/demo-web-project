@@ -24,10 +24,10 @@ import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
-package com.mkyong;
+//package com.mkyong;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+//import org.jsoup.nodes.Document;
 import java.io.IOException;
 
 
@@ -96,7 +96,7 @@ public class WebController {
 				.addAttribute("location", "USA")
 				.addText("Bob Bill");
 
-		return document;
+		return document.toString();
 	}
 
 	// Brian Cho
@@ -136,12 +136,10 @@ public class WebController {
 	//Jack Yan
 	@RequestMapping(value = "/cs480/jack", method = RequestMethod.GET)
 	String userCheck() {
-		return "This is a string";
-	}
-	
+
 		// Using jsoup package to grab title from a website
 		print("Running...");
-		Document document;
+		org.jsoup.nodes.Document document = null;
 		try {
 			//Get Document object after parsing the html from given url.
 			document = Jsoup.connect("http://youtube.com/").get();
@@ -153,6 +151,9 @@ public class WebController {
 			e.printStackTrace();
 		}
 		print("Done");
+
+		return document.toString();
+	}
 
 	public static void print(String string) {
 		System.out.println(string);
