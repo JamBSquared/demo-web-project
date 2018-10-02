@@ -78,9 +78,9 @@
 
 		<!-- Dom4J by Arno Aghababyan -->
 		<dependency>
-			<groupId>dom4j</groupId>
+			<groupId>org.dom4j</groupId>
 			<artifactId>dom4j</artifactId>
-			<version>20040902.021138</version>
+			<version>2.1.1</version>
 		</dependency>
 
 	</dependencies>
