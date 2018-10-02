@@ -87,7 +87,7 @@ public class WebController {
 	}
 
 	@RequestMapping(value = "/cs480/dom4j/", method = RequestMethod.GET)
-	Document createDocument(){
+	String createDocument(){
 		Document document = DocumentHelper.createDocument();
 		Element root = document.addElement("root");
 
