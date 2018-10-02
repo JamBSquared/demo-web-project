@@ -16,6 +16,8 @@ import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+import org.apache.commons.math3.random.RandomDataGenerator;
+
 
 /**
  * This is the controller used by Spring framework.
@@ -88,9 +90,15 @@ public class WebController {
 		
 		return Integer.toString(c) + "\n";
 	}
+
+	@RequestMapping(value = "/cs480/random-num", method = RequestMethod.GET)
+	String returnRandom() {
+		RandomDataGenerator rg = new RandomDataGenerator();
+		return rg.nextHexString(15);
+	}
 	
 	//Jack Yan
-		@RequestMapping(value = "/cs480/jack", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs480/jack", method = RequestMethod.GET)
 	String userCheck() {
 		return "This is a string";
 	}
