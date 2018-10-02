@@ -75,6 +75,14 @@
 			<artifactId>commons-math3</artifactId>
 			<version>3.6.1</version>
 		</dependency>
+
+		<!-- Dom4J by Arno Aghababyan -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>20040902.021138</version>
+		</dependency>
+
 	</dependencies>
 
 	<reporting>
