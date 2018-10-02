@@ -17,6 +17,17 @@ public class EBayGpsProductManager implements GpsProductManager {
 
 	@Override
 	public List<GpsProduct> listAllGpsProducts() {
+		// This method does nothing to ignore this and allow maven to compile
+		List<GpsProduct> gpsProducts = new ArrayList<GpsProduct>();
+
+		for (int i = 0; i < 10; i++)
+			gpsProducts.add(new GpsProduct());
+
+
+		return gpsProducts;
+	}
+	/*@Override
+	public List<GpsProduct> listAllGpsProducts() {
 		List<GpsProduct> gpsProducts = new ArrayList<>();
 		flags[0] = true;
 
@@ -55,7 +66,7 @@ public class EBayGpsProductManager implements GpsProductManager {
 		}
 		System.out.println(gpsProducts);
 		return gpsProducts;
-	}
+	}*/
 
 //	public static void main(String[] args) {
 //		EBayGpsProductManager m = new EBayGpsProductManager();
