@@ -3,6 +3,9 @@ package edu.csupomona.cs480.controller;
 import java.io.File;
 import java.util.List;
 
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Splitter;
+import com.sun.tools.javac.comp.Todo;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -106,6 +109,16 @@ public class WebController {
 		getUser("404");
 		getUserHomepage();
 		return "Hello, World";
+	}
+
+	@RequestMapping(value = "/cs480/student/cho", method = RequestMethod.GET)
+	String trimChars(String str){
+		// Example Input String: String str = "a,,b,,,,c1,d2";
+		Iterable<String> result = Splitter.on(',').trimResults(CharMatcher.DIGIT)
+				.omitEmptyStrings()
+				.split(str);
+
+		return str;
 	}
 
 	// Min-Jae Yi
